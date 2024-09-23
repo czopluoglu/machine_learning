@@ -24,9 +24,6 @@ navbar:
     - text: "Home"
       href: index.html
     
-    - text: "Syllabus"
-      href: syllabus.html
-      
     - text: "Schedule"
       href: schedule.html
     
@@ -163,7 +160,7 @@ navbar:
           href: https://www.kaggle.com/code/uocoeeds/assignment-3
           
     - icon: fa fa-github
-      href: https://github.com/uo-datasci-specialization/c4-ml-fall-2022
+      href: https://github.com/czopluoglu/machine_learning
 
 output: 
   distill::distill_article:    

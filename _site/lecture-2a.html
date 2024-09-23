@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -2445,7 +2445,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
-<a href="syllabus.html">Syllabus</a>
 <a href="schedule.html">Schedule</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
@@ -2524,7 +2523,7 @@ Assignments
 <a href="https://www.kaggle.com/code/uocoeeds/assignment-3">Assignment3</a>
 </div>
 </div>
-<a href="https://github.com/uo-datasci-specialization/c4-ml-fall-2022">
+<a href="https://github.com/czopluoglu/machine_learning">
 <i class="fa fa-github" aria-hidden="true"></i>
 </a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2594,7 +2593,7 @@ Assignments
 }
 
 </style>
-<p>[Updated: Wed, Sep 20, 2023 - 17:30:54 ]</p>
+<p>[Updated: Mon, Sep 23, 2024 - 14:43:35 ]</p>
 <h1 id="scales-of-measurement-and-types-of-variables">1. Scales of Measurement and Types of Variables</h1>
 <p>It is important to understand the nature of variables and how they were measured and represented in a dataset. In social sciences, in particular psychology, there is a methodological consensus about the framework provided by <a href="https://www.jstor.org/stable/1671815">Stevens (1946)</a>, also see <a href="https://doi.org/10.1080/00049530210001706563">Michell (2002)</a> for an in-depth discussion. According to Stevens’ definition, there are four levels of measurement: nominal, ordinal, interval, and ratio. Whether a variable has a nominal, ordinal, interval, or ratio scale depends on the character of the empirical operations performed while constructing the variable.</p>
 <ul>
@@ -3071,25 +3070,25 @@ ln(y) &amp; , \lambda = 0
 </div>
 <pre><code>Non-Standardized Box Cox Transformation with 1000 nonmissing obs.:
  Estimated statistics:
- - lambda = 0.235008 
- - mean (before standardization) = -3.490312 
- - sd (before standardization) = 0.20037 </code></pre>
+ - lambda = 0.2674309 
+ - mean (before standardization) = -3.193509 
+ - sd (before standardization) = 0.1640495 </code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>new</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>fit</span><span class='op'>)</span></span>
 <span> </span>
 <span><span class='fu'><a href='https://rdrr.io/pkg/psych/man/describe.html'>describe</a></span><span class='op'>(</span><span class='va'>old</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code>   vars    n mean sd median trimmed mad min  max range skew kurtosis
-X1    1 1000    0  0      0       0   0   0 0.01  0.01 2.85    15.94
+X1    1 1000    0  0      0       0   0   0 0.01  0.01 1.58     2.78
    se
 X1  0</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/pkg/psych/man/describe.html'>describe</a></span><span class='op'>(</span><span class='va'>new</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>   vars    n  mean  sd median trimmed mad   min   max range  skew
-X1    1 1000 -3.49 0.2  -3.49   -3.49 0.2 -4.11 -2.74  1.37 -0.01
+<pre><code>   vars    n  mean   sd median trimmed  mad   min   max range  skew
+X1    1 1000 -3.19 0.16  -3.19   -3.19 0.17 -3.65 -2.76  0.89 -0.06
    kurtosis   se
-X1    -0.09 0.01</code></pre>
+X1    -0.49 0.01</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="lecture-2a_files/figure-html5/unnamed-chunk-10-1.png" width="960" style="display: block; margin: auto;" /></p>
@@ -3595,8 +3594,8 @@ Dummy variables from Residence_PUMA, Prison_Offense, Age_at_Release,... [trained
 <span></span>
 <span><span class='va'>baked_recidivism</span></span></code></pre>
 </div>
-<pre><code># A tibble: 18,111 x 144
-   Recidivism_~1    ID na_in~2 na_in~3 na_in~4 na_in~5 na_in~6 na_in~7
+<pre><code># A tibble: 18,111 × 144
+   Recidivism_…¹    ID na_in…² na_in…³ na_in…⁴ na_in…⁵ na_in…⁶ na_in…⁷
            &lt;int&gt; &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;
  1             0     1       0       0       0       0       0       0
  2             0     2       0       0       0       0       0       0
@@ -3608,13 +3607,13 @@ Dummy variables from Residence_PUMA, Prison_Offense, Age_at_Release,... [trained
  8             1    11       0       0       0       0       0       0
  9             0    13       0       0       0       0       1       1
 10             0    15       0       0       0       0       0       0
-# ... with 18,101 more rows, 136 more variables:
+# … with 18,101 more rows, 136 more variables:
 #   na_ind_DrugTests_THC_Positive &lt;int&gt;,
 #   na_ind_DrugTests_Cocaine_Positive &lt;int&gt;,
 #   na_ind_DrugTests_Meth_Positive &lt;int&gt;,
 #   na_ind_DrugTests_Other_Positive &lt;int&gt;,
 #   na_ind_Percent_Days_Employed &lt;int&gt;,
-#   Supervision_Risk_Score_First_poly_1 &lt;dbl&gt;, ...</code></pre>
+#   Supervision_Risk_Score_First_poly_1 &lt;dbl&gt;, …</code></pre>
 </div>
 <p>Notice that there are 144 variables (one outcome, one ID, and 142 predictors) in the new processed dataset. In the original dataset, there were 48 predictors. Below is a breakdown of where these 142 variables come from.</p>
 <table>
@@ -4089,7 +4088,7 @@ Dummy variables from Residence_PUMA, Prison_Offense, Age_at_Release,... [trained
 <p> Cengiz Zopluoglu, cengiz@uoregon.edu </p>
 <p> Made using <a href="https://rstudio.github.io/distill/website.html"> the Distill for R Markdown</a> in 
 <a href = "https://www.rstudio.com"> RStudio.</a></p>
-<p>Copyright &copy; 2023-2024 Cengiz Zopluoglu. All rights reserved.</p>
+<p>Copyright &copy; 2024-2025 Cengiz Zopluoglu. All rights reserved.</p>
 </center>
 </div>
 <!--/radix_placeholder_navigation_after_body-->

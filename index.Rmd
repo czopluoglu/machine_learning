@@ -5,6 +5,17 @@ description: |
 site: distill::distill_website
 ---
 
+## Course Information
+
+- Course Title		: Machine Learning for Educational Data Science
+
+- Course Number		: EDLD 654
+
+- Instructor			: Dr. Cengiz Zopluoglu [(Click for pronunciation)](https://namedrop.io/cengizzopluoglu)
+
+- E-mail				  : cengiz@uoregon.edu
+
+
 This course focuses on applied machine learning (ML), with an emphasis on supervised This course is the fourth in a sequence of courses on educational data science (EDS), taught using free and open-source statistical programming languages. EDLD 654: Machine Learning for Educational Data Science aims to teach how to apply several predictive modeling approaches to educational and social science datasets, emphasizing supervised learning methods that have emerged over the last several decades. The primary goal of these methods is to create models capable of making accurate predictions, which generally implies less emphasis on statistical inference. 
 
 By the end of this course, students will be able to
@@ -18,6 +29,7 @@ By the end of this course, students will be able to
 -	discuss the bias-variance tradeoff in supervised learning and apply the concept in making decisions about model selection,
 
 -	measure and contrast the performance of various models.
+
 
 
 ```{r setup, include=FALSE}
